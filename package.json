@@ -2,8 +2,8 @@
   "name": "fc-opener",
   "version": "1.0.0",
   "description": "",
-  "node-main": "server.js",
-  "main": "index.html",
+  "node-main": "src/server.js",
+  "main": "src/client/index.html",
   "scripts": {
     "start": "nw"
   },
