@@ -11,6 +11,10 @@ let zipDir = `./build/${dirName}-win32.zip`;
 checkExists();
 
 function checkExists() {
+	if(!fs.existsSync("build")){
+		fs.mkdirSync("build");
+	}
+	
 	let files = fs.readdirSync("build");
 	let exists = files.filter(file => file.indexOf(package.version) > 0);
 
