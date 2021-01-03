@@ -7,6 +7,9 @@ const logger = require('./logger.js');
 
 let wd = process.cwd();
 
+const PORT = 58889;
+let SERVER_STATUS = "dead";
+
 //nircmd('win activate stitle "Fantastic Contraption 1"');
 
 regedit.list('HKCU\\SOFTWARE\\Classes\\FantasticContraption1\\shell\\open\\command', function(err, result) {
@@ -52,15 +55,19 @@ function createServer(exepath) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.write(JSON.stringify("200 OK")); //write a response to the client
         res.end();
-    }).listen(58889);
+    });
 
     app.get("/status", function(req, res) {
-        let status = {"server": "alive", "FC-path": exepath}
+        let status = {"server": SERVER_STATUS, "FC-path": exepath, "port": PORT}
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.write(JSON.stringify(status)); //write a response to the client
         res.end();
     });
+
+    app.listen(PORT)
+
+    SERVER_STATUS = "alive";
 
     logger.log("listening on localhost:58889");
 }
