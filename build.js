@@ -6,8 +6,10 @@ let package = JSON.parse(fs.readFileSync("package.json"));
 console.log(`./${package.name}/`)
 
 var nw = new NwBuilder({
-    files: `./package.json`, // use the glob format
-    platforms: ['win32']
+    files: "./package.json", // use the glob format
+    platforms: ['win32'],
+    winIco: "fcc_tray.ico",
+    flavor: "normal"
 });
 
 nw.on('log', console.log);
