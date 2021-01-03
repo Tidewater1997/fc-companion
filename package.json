@@ -2,7 +2,7 @@
   "name": "fc-opener",
   "version": "1.0.0",
   "description": "",
-  "node-main": "index.js",
+  "node-main": "server.js",
   "main": "index.html",
   "scripts": {
     "start": "nw"
