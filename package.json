@@ -1,0 +1,22 @@
+{
+  "name": "fc-opener",
+  "version": "1.0.0",
+  "description": "",
+  "node-main": "index.js",
+  "main": "index.html",
+  "scripts": {
+    "start": "nw"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "^4.4.1",
+    "express": "^4.17.1",
+    "nircmd": "^2.0.0",
+    "regedit": "^3.0.3"
+  },
+  "devDependencies": {
+    "nw": "^0.50.2",
+    "nw-builder": "^3.1.2"
+  }
+}
