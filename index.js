@@ -54,9 +54,11 @@ function createServer(exepath) {
             }
         });
 
-        logger.log("trying to focus \"Fantastic Contraption 1\"");
+        logger.log("Trying to focus \"Fantastic Contraption 1\"");
 
         nircmd('win activate stitle "Fantastic Contraption 1"');
+
+        logger.log("Should've focused - ran nircmd command.");
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.write(JSON.stringify("200 OK")); //write a response to the client
