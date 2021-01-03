@@ -15,6 +15,12 @@ let SERVER_STATUS = "dead";
 regedit.list('HKCU\\SOFTWARE\\Classes\\FantasticContraption1\\shell\\open\\command', function(err, result) {
     let regEntry = result['HKCU\\SOFTWARE\\Classes\\FantasticContraption1\\shell\\open\\command'].values[''].value
 
+    if(!regEntry){
+        logger.error("Game does not exist in registry. Is it installed?");
+        logger.log("regEntry:" + regEntry);
+        return;
+    }
+
     let exepath = regEntry.match(/"(.*?)" "%1"/)[1]
 
     //remove extra characters from path
