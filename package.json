@@ -14,7 +14,8 @@
     "width": 700
   },
   "scripts": {
-    "start": "nw"
+    "start": "nw",
+    "build": "node build.js"
   },
   "author": "",
   "license": "ISC",
