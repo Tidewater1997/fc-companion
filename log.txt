@@ -1,5 +1,0 @@
-Sat 01/02/2021 11:21:59PM - listening on localhost:58889
-Sat 01/02/2021 11:22:16PM - spawning "FantasticContraption1.exe" with args "levelId=681054;designId=" in directory "D:\Steam Games\steamapps\common\Fantastic Contraption Classic\contraption1"
-Sat 01/02/2021 11:22:16PM - trying to focus "Fantastic Contraption 1"
-Sat 01/02/2021 11:26:04PM - listening on localhost:58889
-Sat 01/02/2021 11:26:32PM - listening on localhost:58889
