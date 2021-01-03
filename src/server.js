@@ -8,7 +8,7 @@ const logger = require('./logger.js');
 let wd = process.cwd();
 
 const PORT = 58889;
-let SERVER_STATUS = "dead";
+let SERVER_STATUS = "fatal";
 
 //nircmd('win activate stitle "Fantastic Contraption 1"');
 
@@ -51,6 +51,7 @@ function createServer(exepath) {
                 logger.log("Couldn't open exe, see below");
                 logger.log(err);
                 logger.log(stderr);
+                SERVER_STATUS = "error";
             }
         });
 
@@ -66,7 +67,7 @@ function createServer(exepath) {
     });
 
     app.get("/status", function(req, res) {
-        let status = {"server": SERVER_STATUS, "FC-path": exepath, "port": PORT}
+        let status = {"status": SERVER_STATUS, "FC-path": exepath, "port": PORT}
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.write(JSON.stringify(status)); //write a response to the client

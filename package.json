@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "node-main": "src/server.js",
+  "bg-script": "src/bg-script.js",
   "main": "src/client/index.html",
+  "single-instance": true,
+  "inject_js_start": "src/inject_js_start.js",
+  "window": {
+    "icon": "src/fcc_tray.png",
+    "resizable": false,
+    "height": 400,
+    "width": 700
+  },
   "scripts": {
     "start": "nw"
   },
@@ -13,10 +22,10 @@
     "dateformat": "^4.4.1",
     "express": "^4.17.1",
     "nircmd": "^2.0.0",
+    "nw": "^0.50.2",
     "regedit": "^3.0.3"
   },
   "devDependencies": {
-    "nw": "^0.50.2",
     "nw-builder": "^3.1.2"
   }
 }
