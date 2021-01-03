@@ -19,6 +19,7 @@ function updatePage(json) {
         document.querySelector(".status").innerText = json.status + " - Please check my logs";
     } else if (json.status == "fatal") {
         document.querySelector(".indicator").className = "indicator bad";
+        document.querySelector(".status").innerText = json.status + " - Cannot locate FC .exe, unable to proceed. Is the game installed and ran at least one time?";
     }
 
     document.querySelector(".exe").innerText = json["FC-path"];
